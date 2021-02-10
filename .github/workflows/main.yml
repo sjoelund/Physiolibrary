@@ -18,11 +18,7 @@ jobs:
     container: openmodelica/moparser:3.4
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: test2
-        run: find
       - name: Checkout
         uses: actions/checkout@v2
-      - name: test
-        run: find
       - name: Parse the library
-        run: moparser -v 3.4 -r Physiolibrary/
+        run: moparser -v 3.4 -r Physiolibrary
