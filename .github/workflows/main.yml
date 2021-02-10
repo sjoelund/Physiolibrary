@@ -20,7 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Create the script
-        run: echo 'b:=loadFile("Physiolibrary/package.mo");getErrorString();exit(if b then 0 else 1)' > parse.mos
+        run: echo 'b:=loadFile("/github/workspace/Physiolibrary/package.mo");getErrorString();exit(if b then 0 else 1)' > parse.mos
 
       - name: Parse the library
         run: omc parse.mos
