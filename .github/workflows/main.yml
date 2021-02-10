@@ -25,4 +25,4 @@ jobs:
       - name: test
         run: find
       - name: Parse the library
-        run: moparser -v 3.4 -r /github/workspace/Physiolibrary/
+        run: moparser -v 3.4 -r Physiolibrary/
