@@ -15,12 +15,12 @@ jobs:
   # This workflow contains a single job called "parse"
   parse:
     runs-on: ubuntu-latest
-    container: openmodelica/moparser:3.4
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: test
-        run: find /github
+        run: find
       - name: Parse the library
+        container: openmodelica/moparser:3.4
         run: moparser -v 3.4 -r /github/workspace/Physiolibrary/
