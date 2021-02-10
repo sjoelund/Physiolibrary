@@ -15,12 +15,9 @@ jobs:
   # This workflow contains a single job called "parse"
   parse:
     runs-on: ubuntu-latest
-    container: openmodelica/openmodelica:v1.16.2-minimal
+    container: openmodelica/moparser:3.4
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Create the script
-        run: echo 'b:=loadFile("/github/workspace/Physiolibrary/package.mo");getErrorString();exit(if b then 0 else 1)' > parse.mos
-
       - name: Parse the library
-        run: omc parse.mos
+        run: moparser -v 3.4 -r /github/workspace/Physiolibrary/
