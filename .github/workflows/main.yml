@@ -20,4 +20,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Parse the library
-        run: moparser -v 3.4 -r /github/workspace/Physiolibrary/
+        run: |
+        find /github
+        moparser -v 3.4 -r /github/workspace/Physiolibrary/
