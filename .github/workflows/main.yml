@@ -16,10 +16,10 @@ jobs:
   parse:
     runs-on: ubuntu-latest
     container: openmodelica/moparser:3.4
-    uses: actions/checkout@v2
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: test
+        uses: actions/checkout@v2
         run: find /github
       - name: Parse the library
         run: moparser -v 3.4 -r /github/workspace/Physiolibrary/
